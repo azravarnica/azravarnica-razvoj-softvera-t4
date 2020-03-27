@@ -14,6 +14,10 @@ class ArtikalTest {
         assertEquals("ABC", a.getSifra());
     }
 
+    private void assertEquals(String abc, String sifra) {
+
+    }
+
     @Test
     void setSifra() {
         Artikal a = new Artikal("ABC", "Proizvod", 100);
