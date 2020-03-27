@@ -6,10 +6,24 @@ public class Artikal {
     private String sifra, naziv;
     private double cijena;
 
+    public Artikal(){ }
+
     public Artikal(String sifra, String naziv, double cijena){
-        this.cijena= cijena;
-        this.sifra= sifra;
-        this.naziv= naziv;
+        setSifra(sifra);
+        setNaziv(naziv);
+        setCijena(cijena);
+        
+    }
+    public Artikal(String s) {  //konstruktor
+        /*
+        konstruktor koji prima jedan argument tipa String oblika
+        "šifra,naziv,cijena" (string u kojem su šifra, naziv i cijena
+        artikla razdvojeni zarezom);
+         */
+        String[] rez = s.split(",");
+        setSifra(rez[0]);
+        setNaziv(rez[1]);
+        setCijena(Double.parseDouble(rez[2]));
     }
 
     public String getSifra() {
@@ -45,17 +59,6 @@ public class Artikal {
         this.cijena = cijena;
     }
 
-    public Artikal(String s) {  //konstruktor
-        /*
-        konstruktor koji prima jedan argument tipa String oblika
-        "šifra,naziv,cijena" (string u kojem su šifra, naziv i cijena
-        artikla razdvojeni zarezom);
-         */
-        String[] rez = s.split(",");
-        setSifra(rez[0]);
-        setNaziv(rez[1]);
-        setCijena(Double.parseDouble(rez[2]));
-    }
 
     /*
     metodu toString koja vraća string istog oblika kao onaj kojeg prima upravo
