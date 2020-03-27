@@ -6,6 +6,12 @@ public class Artikal {
     private String sifra, naziv;
     private double cijena;
 
+    public Artikal(String sifra, String naziv, double cijena){
+        this.cijena= cijena;
+        this.sifra= sifra;
+        this.naziv= naziv;
+    }
+
     public String getSifra() {
         return sifra;
     }
@@ -66,13 +72,12 @@ public class Artikal {
     pod pojmom "duplikata" smatraju se dva artikla koji posjeduju istu šifru, naziv i cijenu;
      */
 
-    public static ArrayList izbaciDuplikate (ArrayList<Artikal> artikli){
+    public static void izbaciDuplikate (ArrayList<Artikal> artikli){
         for (int i = 0; i < artikli.size(); i++) {
             for (int j = i + 1; j < artikli.size(); j++) {
                 if(artikli.get(i).equals(artikli.get(j)))
                     artikli.remove(j);
             }
         }
-        return artikli;
     }
 }
