@@ -6,14 +6,23 @@ public class Artikal {
     private String sifra, naziv;
     private double cijena;
 
-    public Artikal(){ }
-
     public Artikal(String sifra, String naziv, double cijena){
-        setSifra(sifra);
+       try{ setSifra(sifra);
         setNaziv(naziv);
-        setCijena(cijena);
-        
+        setCijena(cijena); } catch (Exception e) {
+            throw new IllegalArgumentException(e);
+        }
+
     }
+   /* public Artikal(String sifra, String naziv, double cijena) {
+        try {
+            this.sifra = sifra;
+            this.naziv = naziv;
+            this.cijena = cijena;
+        } catch(Exception e) {
+            throw new IllegalArgumentException(e);
+        }
+    }*/
     public Artikal(String s) {  //konstruktor
         /*
         konstruktor koji prima jedan argument tipa String oblika
