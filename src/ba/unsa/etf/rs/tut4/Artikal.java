@@ -25,14 +25,23 @@ public class Artikal {
     }
 
     public void setSifra(String sifra) {
+        if(sifra.isEmpty()){
+            throw new IllegalArgumentException("Šifra je prazna");
+        }
         this.sifra = sifra;
     }
 
     public void setNaziv(String naziv) {
+        if(naziv.isEmpty()){
+            throw new IllegalArgumentException("Naziv je prazna");
+        }
         this.naziv = naziv;
     }
 
     public void setCijena(double cijena) {
+        if(cijena<0){
+            throw new IllegalArgumentException("Cijena je negativna");
+        }
         this.cijena = cijena;
     }
 
