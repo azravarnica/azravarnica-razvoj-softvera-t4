@@ -96,7 +96,17 @@ class ArtikalTest {
             a.setNaziv("");
         }, "Naziv je prazan");
     }
-
+    @Test
+    void toStringTest(){
+        Artikal a = new Artikal("ABC", "Proizvod", 100.0);
+        assertEquals("ABC,Proizvod,100.0",a.toString());
+    }
+    @Test
+    void konstruktorArtikalTest (){
+        Artikal a1 = new Artikal("ABC", "Proizvod", 100);
+        assertEquals("ABC,Proizvod,100.0",a1.toString());
+        assertFalse(a1.toString()=="ABC,Proizvod,100.0");
+    }
     @Test
     void testEquals() {
         Artikal a1 = new Artikal("ABC", "Proizvod", 100);

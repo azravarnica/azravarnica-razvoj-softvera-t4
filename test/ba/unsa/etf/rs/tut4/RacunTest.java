@@ -19,4 +19,25 @@ class RacunTest {
         Racun r = new Racun();
         assertEquals(0, r.ukupanIznos());
     }
+    @Test
+    void getArtikalTest (){
+        Racun r = new Racun();
+        r = new Racun(new Artikal("HLB", "Hljeb", 1.1), 2);
+        assertEquals(r.getArtikal(),new Artikal("HLB", "Hljeb", 1.1));
+    }
+    @Test
+    void setArtikalTest (){
+        Racun r = new Racun();
+        r = new Racun(new Artikal("HLB", "Hljeb", 1.1), 2);
+        assertEquals(r.getArtikal(),new Artikal("HLB", "Hljeb", 1.1));
+        r= new Racun(new Artikal("HLB", "Hljeb", 15), 2);
+        assertEquals(r.getArtikal(),new Artikal("HLB", "Hljeb", 15));
+    }
+    @Test
+    void getKolicinaTest (){
+        Racun r = new Racun();
+        r = new Racun(new Artikal("HLB", "Hljeb", 1.1), 2);
+        assertNotEquals(r.getKolicina(), 15);
+
+    }
 }
